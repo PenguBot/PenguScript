@@ -1,0 +1,25 @@
+{
+  "name": "stitchscript",
+  "version": "1.0.0",
+  "description": "Text based parser for Discord bots.",
+  "main": "src/index",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Soumil07/stitchscript.git"
+  },
+  "keywords": [
+    "tags",
+    "renderer",
+    "custom-commands",
+    "discord"
+  ],
+  "author": "Soumil07 (Stitch)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Soumil07/stitchscript/issues"
+  },
+  "homepage": "https://github.com/Soumil07/stitchscript#readme"
+}
