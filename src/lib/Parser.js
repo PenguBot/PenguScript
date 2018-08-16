@@ -47,6 +47,15 @@ module.exports = class Parser {
 		for (const tag of this.tags) {
 			// eslint-disable-next-line prefer-const
 			let [name, value] = tag.split(':');
+
+			// custom args handling: there has to be a better way to do this
+			if (name.includes('arg') && !value) {
+				const [, number] = name.toLowerCase().split('arg');
+				if (!data.args || !data.args[number - 1]) throw `At least ${number} args are required to use this tag.`;
+				input = input.replace(`{${name}}`, data.args[number - 1]);
+				continue;
+			}
+
 			const oldValue = value;
 			if (!value && this.renderers[name].requiresValue) throw `The ${name} renderer requires a value.`;
 			if (value && value.includes('arg')) {
